@@ -28,7 +28,9 @@ class SmartAssetImage extends StatelessWidget {
       builder: (context, snap) {
         // Resolve first candidate to an existing asset (AssetRouter.resolve
         // will return the placeholder when nothing matches).
-        String resolved = AssetRouter.resolve(candidates.isNotEmpty ? (candidates.first ?? '') : '');
+  // Prefer mobile variants on narrow screens
+  final bool preferMobile = MediaQuery.maybeOf(context)?.size.width != null && MediaQuery.of(context).size.width < 600;
+  String resolved = AssetRouter.resolve(candidates.isNotEmpty ? (candidates.first ?? '') : '', preferMobile: preferMobile);
 
         // On web the engine may prefix the request path with `assets/`.
         // If the resolved path already starts with `assets/` we should strip
@@ -43,7 +45,7 @@ class SmartAssetImage extends StatelessWidget {
         // candidates, try others.
         if (resolved.contains('placeholder') && candidates.length > 1) {
           for (final c in candidates.skip(1)) {
-            final tryRes = AssetRouter.resolve(c ?? '');
+            final tryRes = AssetRouter.resolve(c ?? '', preferMobile: preferMobile);
             if (!tryRes.contains('placeholder')) {
               resolved = tryRes;
               break;

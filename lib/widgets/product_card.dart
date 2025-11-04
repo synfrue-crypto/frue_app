@@ -39,7 +39,7 @@ class ProductCard extends StatelessWidget {
                   // small badge overlay in bottom-left of the image (like mock)
                   if ((product['brand_quality'] ?? '').toString().isNotEmpty)
                     Positioned(
-                      left: 8,
+                      right: 8,
                       bottom: 8,
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
@@ -65,7 +65,7 @@ class ProductCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Title + price row: name (styled) on the left, price on the right
+                  // Title row: centered name
                   Padding(
                     padding: const EdgeInsets.fromLTRB(12, 8, 12, 2),
                     child: Row(
@@ -76,6 +76,7 @@ class ProductCard extends StatelessWidget {
                             name,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 15,

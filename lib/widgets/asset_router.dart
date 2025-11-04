@@ -29,7 +29,9 @@ class AssetRouter {
 
   /// Public resolver. Accepts an ID like "SFRU-001-A0001" **or** any
   /// partial/garbled path and returns a clean, existing asset path.
-  static String resolve(String? input) {
+  /// If [preferMobile] is true the resolver will prefer candidates with
+  /// a mobile suffix (e.g. `-mobile.png` / `_mobile.jpg`) when searching.
+  static String resolve(String? input, {bool preferMobile = false}) {
     // Preferred image homes. Older data lives under `assets/frue/images/`
     // while newer layout uses `assets/data/frue/images/`. Try both so
     // resolution works regardless of which one is present in the repo.
@@ -81,10 +83,25 @@ class AssetRouter {
     final id = raw;
     final List<String> idCandidates = [];
     for (final b in bases) {
+      if (preferMobile) {
+        idCandidates.addAll([
+          '$b$id-mobile.png',
+          '$b${id}_mobile.png',
+          '$b$id-mobile.jpg',
+          '$b${id}_mobile.jpg',
+          '$b$id-mobile.jpeg',
+          '$b${id}_mobile.jpeg',
+        ]);
+      }
       idCandidates.addAll([
         '$b$id.png',
         '$b$id.jpg',
         '$b$id.jpeg',
+      ]);
+      // Also include some legacy candidates without the START- prefix
+      idCandidates.addAll([
+        '${b}START-$id.png',
+        '${b}START-$id.jpg',
       ]);
     }
     return pickFirst(idCandidates);

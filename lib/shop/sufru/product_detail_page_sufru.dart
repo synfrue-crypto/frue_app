@@ -4,6 +4,8 @@ import '../../widgets/quantity_input.dart';
 import '../../widgets/smart_image.dart';
 import '../../widgets/badges.dart';
 import '../../cart/cart_provider.dart';
+import '../cart_page.dart';
+import '../../services/data_loader.dart';
 
 /// SÜFRÜ product detail tweaks:
 /// - Consolidate long_desc, Anwendung, Composition into a single block under the title
@@ -201,14 +203,26 @@ class _ProductDetailPageState extends State<ProductDetailPageSufru> {
               const Spacer(),
               FilledButton.icon(
                 style: FilledButton.styleFrom(backgroundColor: color),
-                onPressed: () {
+                onPressed: () async {
                   final total = qty + (_freemenge.isNaN ? 0.0 : _freemenge);
                   if (total <= 0) return;
                   // Convert physical quantity into cart 'units' (units = total / step)
                   final units = (total / step);
                   CartProvider.of(context).add(id, by: units);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Zum Warenkorb hinzugefügt')),
+
+                  // Navigate to Cart (kein Popup). Try to provide product index for naming/prices.
+                  final ctx = context; // capture BuildContext before await
+                  final catalog = await DataLoader.loadCatalogSufru();
+                  if (!ctx.mounted) return;
+                  final index = <String, Map<String, dynamic>>{
+                    for (final p in catalog) (p['id'] ?? '').toString(): p,
+                  };
+                  // Push CartPage with index
+                  Navigator.push(
+                    ctx,
+                    MaterialPageRoute(
+                      builder: (_) => CartPage(productIndex: index),
+                    ),
                   );
                 },
                 icon: const Icon(Icons.add_shopping_cart),

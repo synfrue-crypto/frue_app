@@ -110,8 +110,15 @@ class _ShopListPageSufruState extends State<ShopListPageSufru> {
           Expanded(
             child: LayoutBuilder(
               builder: (context, constraints) {
-                final w = constraints.maxWidth;
-                final cross = w >= 1200 ? 5 : w >= 900 ? 4 : w >= 600 ? 3 : 2;
+        final w = constraints.maxWidth;
+        // Responsive grid per spec: XS 1 · SM 2 · MD 3 · LG 4+
+        final cross = w >= 1200
+          ? 4
+          : w >= 900
+            ? 3
+            : w >= 600
+              ? 2
+              : 1;
                 final products = _filtered;
 
                 if (products.isEmpty) {
