@@ -16,7 +16,7 @@ class BrandHomeSufru extends StatelessWidget {
       aspectRatio: 16 / 9,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
-        child: SmartAssetImage(const [
+        child: const SmartAssetImage([
           'START-SFRU-A0001',
         ], fit: BoxFit.cover),
       ),

@@ -8,10 +8,10 @@ class ShopListPageBlufru extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('blüfrü')),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: const [
+          children: [
             Icon(Icons.construction, size: 64),
             SizedBox(height: 12),
             Text('Im Aufbau – bald verfügbar', style: TextStyle(fontSize: 18)),

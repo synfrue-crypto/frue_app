@@ -26,7 +26,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     final user = AuthService.instance.currentUser;
-    final brand = 'sufru'; // Farbwelt warm – kann Karl später dynamisieren
+    const brand = 'sufru'; // Farbwelt warm – kann Karl später dynamisieren
     final color = BrandTheme.colorFor(brand);
 
     return Scaffold(

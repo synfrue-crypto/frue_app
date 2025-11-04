@@ -6,7 +6,7 @@ class CommunitySections extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tiles = const [
+    const tiles = [
       _Tile('Pflanzen', Icons.eco_outlined),
       _Tile('Anbau', Icons.grass),
       _Tile('Lernen', Icons.school_outlined),

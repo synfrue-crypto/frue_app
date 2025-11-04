@@ -146,10 +146,10 @@ class _ShopListPageGrufruState extends State<ShopListPageGrufru> {
 
                           final data = _filtered;
                           if (data.isEmpty) {
-                            return Center(
+                            return const Center(
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
-                                children: const [
+                                children: [
                                   Icon(Icons.shopping_bag_outlined, size: 40),
                                   SizedBox(height: 8),
                                   Text('Keine Produkte gefunden'),
