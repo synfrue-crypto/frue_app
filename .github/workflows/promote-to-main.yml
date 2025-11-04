@@ -1,0 +1,52 @@
+name: Promote dev ➜ main (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      merge_method:
+        description: Merge method
+        required: true
+        default: squash
+        type: choice
+        options: [squash, merge, rebase]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dev
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+
+      - name: Open PR dev ➜ main (or merge existing)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const head = "dev";
+            const base = "main";
+            const mergeMethod = core.getInput("merge_method");
+            const prs = await github.rest.pulls.list({ owner, repo, state: "open", head: `${owner}:${head}`, base });
+            let pr;
+            if (prs.data.length === 0) {
+              pr = (await github.rest.pulls.create({
+                owner, repo, head, base,
+                title: "Promote dev ➜ main",
+                body: "Manual promotion to main."
+              })).data;
+              core.info(`Created PR #${pr.number}`);
+            } else {
+              pr = prs.data[0];
+              core.info(`Found existing PR #${pr.number}`);
+            }
+            try {
+              await github.rest.pulls.merge({ owner, repo, pull_number: pr.number, merge_method: mergeMethod });
+              core.info("Merged to main ✅");
+            } catch (e) {
+              core.warning("Auto-merge blocked (required review). Approve PR and re-run.");
+            }

@@ -1,0 +1,78 @@
+name: CI-Light (Karl ➜ dev)
+
+on:
+  push:
+    branches:
+      - karl/phase1
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  analyze-and-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Flutter version
+        run: flutter --version
+
+      - name: Fetch dependencies
+        run: flutter pub get
+
+      - name: Analyze (Dart/Flutter)
+        run: bash scripts/ci/analyze.sh
+        shell: bash
+
+      - name: Upload analyzer report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: analyzer-report
+          path: |
+            frue_sync/logs/PHASE1_analyze.txt
+            frue_sync/logs/**
+          if-no-files-found: ignore
+
+      - name: Open or update PR karl/phase1 ➜ dev
+        if: ${{ success() && github.ref_name == 'karl/phase1' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const head = "karl/phase1";
+            const base = "dev";
+            const prs = await github.rest.pulls.list({ owner, repo, state: "open", head: `${owner}:${head}`, base });
+            let pr;
+            if (prs.data.length > 0) {
+              pr = prs.data[0];
+              core.info(`Found existing PR #${pr.number}`);
+            } else {
+              pr = (await github.rest.pulls.create({
+                owner, repo, head, base,
+                title: "Auto: Karl Phase 1 ➜ dev",
+                body: "Created automatically by CI-Light after a successful analyzer run."
+              })).data;
+              core.info(`Created PR #${pr.number}`);
+            }
+            try {
+              await github.rest.issues.addLabels({ owner, repo, issue_number: pr.number, labels: ["ci:auto","karl"] });
+            } catch (e) { core.warning(`Label add failed: ${e.message}`); }
+            try {
+              await github.graphql(`
+                mutation($prId:ID!) {
+                  enablePullRequestAutoMerge(input:{pullRequestId:$prId, mergeMethod:SQUASH}) { clientMutationId }
+                }
+              `, { prId: pr.node_id });
+              core.info("Auto-merge enabled (if repo policy allows).");
+            } catch (e) {
+              core.warning(`Auto-merge not enabled (branch protection likely requires review): ${e.message}`);
+            }
