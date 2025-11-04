@@ -1,0 +1,6 @@
+# Reviews gehen automatisch an dich (Owner) und optional Karl-Branch
+* @synfrue-crypto
+
+# Beispiel: Shop-Bereich
+/lib/shop/ @synfrue-crypto
+/lib/brand/ @synfrue-crypto
