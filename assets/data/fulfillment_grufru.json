@@ -1,0 +1,13 @@
+[
+  {
+    "id": "pickup_langendorf",
+    "shop": "grufru",
+    "label": "Abholung Marktstand Langendorf",
+    "address": "Obergreißlauer Straße 2 06667 Langendorf",
+    "opening_hours": "Samstag von 09 bis 12.00 Uhr",
+    "start_date": "2025-10-25 00:00:00",
+    "start_time": "09:00:00",
+    "end_date": "21:00:00",
+    "end_time": "2025-11-10 00:00:00"
+  }
+]

@@ -1,0 +1,1 @@
+﻿PHASE2 nav wiring - 11/04/2025 10:43:10 Files changed:  - lib/brand/shop_launcher.dart: route sufru tile to BrandHomeSufru  Artifacts:  - frue_sync/screenshots/flow_nav_root.png  - frue_sync/screenshots/flow_nav_sufru.png  - frue_sync/screenshots/flow_nav_grid.png  - frue_sync/screenshots/flow_nav_detail.png

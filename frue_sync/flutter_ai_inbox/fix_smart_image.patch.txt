@@ -1,0 +1,5 @@
+Updated: lib/widgets/smart_image.dart
+- Removed `const` from SmartAssetImage constructor because `_flat` is non-const and the constructor cannot be const.
+- This fixes the analyzer error: "Invalid constant value" when callers used `const [...]` as argument.
+
+Validation: SmartAssetImage is now a normal constructor; callers may still pass non-const lists. Analyzer no longer reports invalid constant on this file.

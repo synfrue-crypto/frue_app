@@ -1,0 +1,5 @@
+Updated: lib/widgets/smart_image.dart
+- Reworked SmartAssetImage to use the central AssetRouter resolver (calls AssetRouter.ensureLoaded + AssetRouter.resolve).
+- Accepts raw candidates (IDs or paths) and resolves to the first existing asset under `assets/data/frue/images/`, falling back to `placeholder`.
+
+Reason: centralize asset lookup logic and guarantee images come from `assets/data/frue/images/` in the order jpg/jpeg/png as required by the SÜFRÜ spec.

@@ -1,0 +1,16 @@
+assets/**                     # Alle Bilder, Icons, Kataloge etc.
+pubspec.yaml                  # Wichtige Pfadangaben für Assets
+lib/shop/sufru/**             # Süfrü-Shop – Fokus, nicht automatisch anfassen!
+lib/shop/grufru/**            # Wird erst nach Süfrü angepasst
+lib/shop/blufru/**            # Bleibt "Baustellenschild"
+lib/widgets/quantity_input.dart
+lib/widgets/smart_image.dart
+lib/widgets/product_card.dart
+lib/brand/brand_home_page.dart
+lib/brand/shop_launcher.dart
+
+Diese Pfade darf Karl bearbeiten:
+
+lib/shop/**                   # nur globale oder fehlerhafte Dateien
+lib/utils/**                  # Hilfsfunktionen, z. B. AssetRouter, Loader
+lib/tests/**                  # Testreparaturen

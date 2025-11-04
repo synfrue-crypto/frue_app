@@ -1,0 +1,5 @@
+Updated: lib/widgets/product_card.dart
+- Added badge overlay in image area (top-right) showing `assets/icons/{brand_quality}.png` when product['brand_quality'] is set (e.g., 'bio' or 'demeter').
+- Switched image usage to the new `SmartAssetImage([imgId])` API which resolves via AssetRouter.
+
+Reason: Provide visible bio/demeter badges in product grid as requested in SÜFRÜ UI spec.

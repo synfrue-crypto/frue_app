@@ -1,0 +1,37 @@
+Startseiten-Implementierung (2025-11-04)
+=====================================
+
+Änderungen:
+- lib/brand/brand_home_sufru.dart  (neu/aktualisiert)
+  • Titelsektion und Fließtexte aus 'assets/data/frue/text/suefrue_homepage_texte_final.txt' übernommen
+  • CTA lädt den SÜFRÜ-Katalog und öffnet das Grid
+
+- lib/brand/brand_home_grufru.dart (neu/aktualisiert)
+  • Titelsektion und Fließtexte aus 'assets/data/frue/text/gruefrue_homepage_texte_final.txt' übernommen
+  • CTA öffnet die grufru-Startseite (ShopListPageGrufru)
+
+- lib/brand/brand_home_blufru.dart (neu/aktualisiert)
+  • Titelsektion und Fließtexte aus 'assets/data/frue/text/bluefrue_homepage_text_final.txt' übernommen
+  • Baustellen-Claim („Hier wächst bald etwas Schönes 🌼") und CTA erhalten
+
+Navigation:
+- lib/brand/brand_home_page.dart aktualisiert: Marken-Tiles verlinken jetzt zu den neuen BrandHome-Seiten.
+
+Validierung:
+- Dart Analyzer ausgeführt (Stand):
+  - 10 Issues gefunden (warnings/infos). Keine Errors.
+  - Warnings/Infos umfassen: fehlende include in analysis_options.yaml, einige unused_import warnings, und deprecated withOpacity usage in BrandTheme.
+
+Ausführungstest:
+- Die App startet lokal im Debug-Modus (fluter run -d chrome) — vorheriger Lauf erfolgreich; die Änderungen sind UI-only und sollten die App nicht am Start hindern.
+
+Safe-Mode:
+- Es wurden nur UI-Änderungen vorgenommen; keine Änderungen an Cart/Checkout/Backend/Netzwerk.
+
+Weitere Hinweise / Empfehlungen:
+- Bitte reviewe die Texte visuell (mobile/tablet/desktop). Ich habe die originaldateien aus assets/data/frue/text verwendet.
+- Optional: Lint-Warnings bereinigen (kleineres Refactor, nicht sicherheitskritisch).
+- Optional: Ersetze die Hero-Asset-IDs für GFRU/BFRU mit realen Assets falls vorhanden (START-GFRU-A0001 / START-BFRU-A0001). SmartAssetImage fällt bei Fehlen sauber zurück.
+
+Erstellt von: automatischer Patch
+Datum: 2025-11-04

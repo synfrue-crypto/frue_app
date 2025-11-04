@@ -1,0 +1,90 @@
+[
+  {
+    "id": "pickup_panukko",
+    "shop": "sufru",
+    "label": "Abholstation Panukko Leipzig Plagwitz",
+    "address": "Erich‑Zeigner‑Allee 64a 04229 Leipzig",
+    "opening_hours": "Dienstag: Geschlossen Mittwoch: 11:00–18:00 Donnerstag: 11:00–18:00 Freitag: 11:00–18:00 Samstag: 11:00–16:00 Sonntag: Geschlossen Montag: Geschlossen",
+    "start_date": "2025-10-25 00:00:00",
+    "start_time": "09:00:00",
+    "end_date": "21:00:00",
+    "end_time": "2025-11-10 00:00:00"
+  },
+  {
+    "id": "pickup_lou",
+    "shop": "sufru",
+    "label": "Abholstation LOU Kunst & Muse Naumburg",
+    "address": "Engelsgasse 20 06618 Naumburg",
+    "opening_hours": "Dienstag - Mittwoch: 10:30 – 12:00 & 13:00 – 16:00 Donnerstag - Freitag: 10:30 – 13:00 & 14:00 – 18:00 Samstag: 10:30 – 14:00 Sonntag & Montag: Geschlossen",
+    "start_date": "2025-10-25 00:00:00",
+    "start_time": "09:00:00",
+    "end_date": "21:00:00",
+    "end_time": "2025-11-10 00:00:00"
+  },
+  {
+    "id": "pickup_langendorf",
+    "shop": "sufru",
+    "label": "Abholung Marktstand Langendorf",
+    "address": "Obergreißlauer Straße 2 06667 Langendorf",
+    "opening_hours": "Samstag von 09 bis 12.00 Uhr",
+    "start_date": "2025-10-25 00:00:00",
+    "start_time": "09:00:00",
+    "end_date": "21:00:00",
+    "end_time": "2025-11-10 00:00:00"
+  },
+  {
+    "id": "delivery_nord",
+    "shop": "sufru",
+    "label": "Lieferung Nord zzgl. 5.00 € Lieferpauschale",
+    "address": "Gebiet Mersebrug / Halle",
+    "opening_hours": "Mittwoch ( Zustellfenster 16-20 Uhr)",
+    "start_date": "2025-10-25 00:00:00",
+    "start_time": "09:00:00",
+    "end_date": "21:00:00",
+    "end_time": "2025-11-10 00:00:00"
+  },
+  {
+    "id": "delivery_ost",
+    "shop": "sufru",
+    "label": "Lieferung Ost zzgl. 5.00 € Lieferpauschale",
+    "address": "Gebiet Leipzig",
+    "opening_hours": "Mittwoch ( Zustellfenster 16-20 Uhr)",
+    "start_date": "2025-10-25 00:00:00",
+    "start_time": "09:00:00",
+    "end_date": "21:00:00",
+    "end_time": "2025-11-10 00:00:00"
+  },
+  {
+    "id": "delivery_süd",
+    "shop": "sufru",
+    "label": "Lieferung Süd zzgl. 5.00 € Lieferpauschale",
+    "address": "Gebiet Zeitz",
+    "opening_hours": "Donnerstag ( Zustellfenster 16-20 Uhr)",
+    "start_date": "2025-10-25 00:00:00",
+    "start_time": "09:00:00",
+    "end_date": "21:00:00",
+    "end_time": "2025-11-10 00:00:00"
+  },
+  {
+    "id": "delivery_west",
+    "shop": "sufru",
+    "label": "Lieferung West zzgl. 5.00 € Lieferpauschale",
+    "address": "Gebiet Naumburg / Freyburg",
+    "opening_hours": "Donnerstag ( Zustellfenster 16-20 Uhr)",
+    "start_date": "2025-10-25 00:00:00",
+    "start_time": "09:00:00",
+    "end_date": "21:00:00",
+    "end_time": "2025-11-10 00:00:00"
+  },
+  {
+    "id": "delivery_versand",
+    "shop": "sufru",
+    "label": "Versand zzgl. 8.50 € Pauschale",
+    "address": "DE bundesweit",
+    "opening_hours": "Paketaufgabe ein Tag nach Zahlungseingang",
+    "start_date": "2025-10-25 00:00:00",
+    "start_time": "09:00:00",
+    "end_date": "21:00:00",
+    "end_time": "2025-11-10 00:00:00"
+  }
+]

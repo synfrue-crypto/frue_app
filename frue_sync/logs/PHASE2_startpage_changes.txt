@@ -1,0 +1,3 @@
+﻿PHASE2_startpage - 2025-11-04T11:00:17.6088296+01:00
+desktop: C:\Users\Test\crash shopsplit\frue_app_projekt_shopsplit_defekt\frue_app\scripts\..\frue_sync\screenshots\brandhome_sufru_desktop.png
+mobile: C:\Users\Test\crash shopsplit\frue_app_projekt_shopsplit_defekt\frue_app\scripts\..\frue_sync\screenshots\brandhome_sufru_mobile.png

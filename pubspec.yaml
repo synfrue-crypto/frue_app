@@ -1,0 +1,39 @@
+name: frue_app
+description: Frü App (Plug & Work V2)
+publish_to: "none"
+version: 2.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  url_launcher: ^6.3.0
+  http: ^1.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/
+    - assets/data/sufru/
+    - assets/data/grufru/
+    - assets/data/blufru/
+    - config/
+    - assets/frue/images/
+    - assets/icons/
+    - assets/brand/
+    - assets/data/catalog_sufru.json
+    - assets/data/catalog_grufru.json
+    - assets/data/catalog_blufru.json
+    - assets/brand/grufru/
+    - assets/brand/grufru/tiers.png
+    - assets/pricing/tiers_grufru.json  
+
+    
+    

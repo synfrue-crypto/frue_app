@@ -1,0 +1,7 @@
+Replaced: lib/shop/blufru/product_detail_page_blufru.dart
+- Original file contained a duplicated definition of ProductDetailPageGrufru (copy of grufru implementation), incorrect imports and JSON logic not relevant to blufru.
+- Replaced with lightweight ProductDetailPageBlufru placeholder showing 'Im Aufbau'.
+
+Reason: Prevent duplicate class definitions, fix wrong relative imports, and align with project goal: blüfrü is a dummy page.
+
+Validation: Replaced file defines ProductDetailPageBlufru and no longer defines ProductDetailPageGrufru. Should remove analyzer errors about duplicate class.

@@ -1,0 +1,15 @@
+{
+  "root_id": "1JnLEm3sefos0OHrByOmTKIcJeARWta0D",
+  "shops_folder_id": "14wGZDMWBECARIDRJC15nLtxz4HU3PjC5",
+  "brand_folders": {
+    "sufru": "1LYthGD_7OLabN5Npz72maQwGH_V2jSfc",
+    "grufru": "1lyRkC32d2Jz_jDNdhE_AUhiGVGTJKCLP",
+    "blufru": "1-HEstYkCUPHrRFfcCScHGVIe3axNYjDc"
+  },
+  "export_files": {
+    "catalog": "catalog.json",
+    "categories": "categories.json",
+    "units_override": "units_override.json",
+    "fulfillment": "fulfillment.json"
+  }
+}

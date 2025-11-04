@@ -1,0 +1,5 @@
+Updated: lib/widgets/quantity_input.dart
+- Ensured arithmetic results are doubles and onChanged receives double values.
+- Kept formatting to 0 or 2 decimals depending on step.
+
+Reason: Support fractional steps (0.25) for special SÜFRÜ products and avoid subtle type issues.

@@ -1,0 +1,14 @@
+﻿{
+  "": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIâ†’Rio Manifest",
+  "type": "object",
+  "required": ["status", "topic", "created_at", "author", "changes"],
+  "properties": {
+    "status": {"type": "string"},
+    "topic": {"type": "string"},
+    "created_at": {"type": "string"},
+    "author": {"type": "string"},
+    "changes": {"type": "array"},
+    "tests": {"type": "object"}
+  }
+}

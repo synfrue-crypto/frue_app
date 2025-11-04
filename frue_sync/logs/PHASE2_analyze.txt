@@ -1,0 +1,15 @@
+﻿Analyzing frue_app...
+
+warning - analysis_options.yaml:10:10 - The include file 'package:flutter_lints/flutter.yaml' in 'C:\Users\Test\crash shopsplit\frue_app_projekt_shopsplit_defekt\frue_app\analysis_options.yaml' can't be found when analyzing 'C:\Users\Test\crash shopsplit\frue_app_projekt_shopsplit_defekt\frue_app'. - include_file_not_found
+warning - lib\app\frue_app.dart:27:26 - A value for optional parameter 'key' isn't ever given. Try removing the unused parameter. - unused_element_parameter
+warning - lib\core\grufru_catalog_utils.dart:1:8 - Unused import: 'package:flutter/material.dart'. Try removing the import directive. - unused_import
+warning - lib\shop\fulfillment_utils.dart:13:54 - The operand can't be 'null', so the condition is always 'true'. Remove the condition. - unnecessary_null_comparison
+warning - lib\shop\sufru\shop_list_page_sufru.dart:4:8 - Unused import: '../../widgets/smart_image.dart'. Try removing the import directive. - unused_import
+   info - lib\core\asset_bundle_normalizer.dart:4:8 - The import of 'package:flutter/foundation.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/services.dart'. Try removing the import directive. - unnecessary_import
+   info - lib\shop\cart_model.dart:2:8 - The import of 'package:flutter/foundation.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/widgets.dart'. Try removing the import directive. - unnecessary_import
+   info - lib\theme\brand_theme.dart:26:28 - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement. - deprecated_member_use
+   info - lib\theme\brand_theme.dart:30:37 - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement. - deprecated_member_use
+   info - lib\theme\brand_theme.dart:31:58 - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement. - deprecated_member_use
+   info - lib\widgets\product_card.dart:78:75 - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement. - deprecated_member_use
+
+11 issues found.

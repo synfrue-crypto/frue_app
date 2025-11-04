@@ -1,0 +1,4 @@
+- Nur süfrü fixen: grufru/blufru NICHT anfassen.
+- Keine API/Drive/Firestore-Zugriffe (reiner UI/Asset/Catalog-Fix).
+- Nach jedem Schritt: dart analyze → Log in frue_sync/logs/.
+- Sichtbeweis: PNGs in frue_sync/screenshots/ ablegen.

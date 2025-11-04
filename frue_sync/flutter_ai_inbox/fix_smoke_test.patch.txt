@@ -1,0 +1,4 @@
+Updated: lib/tests/smoke_test.dart
+- Changed DataLoader.loadCatalog() call to pass a brand string (`'sufru'`) because the core DataLoader.loadCatalog requires a brand parameter.
+
+Reason: Fixes analyzer error about missing positional argument in test code.

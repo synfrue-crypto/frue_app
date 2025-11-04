@@ -1,0 +1,4 @@
+Updated: lib/brand/brand_home_page.dart
+- Removed passing of non-existing named parameter `brand` to ShopLauncher. Now calls `ShopLauncher()`.
+
+Reason: `ShopLauncher` constructor did not accept `brand`, causing an analyzer error (undefined_named_parameter). Kept behavior unchanged: ShopLauncher decides which catalogs to load (sufru is default in launcher).

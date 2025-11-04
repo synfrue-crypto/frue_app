@@ -1,0 +1,7 @@
+Updated: lib/shop/sufru/product_detail_page_sufru.dart
+- Consolidated detail texts into a single, well-formatted block under the product title.
+- Shows `brand_quality` badge (bio/demeter) next to the title if present; icons read from `assets/icons/{brand_quality}.png`.
+- Adds a "Freimenge" numeric input; total quantity added to cart = qty + freimenge (freemenge must be positive).
+- Special-case qty step: if category == 'CAT04' or product id SFRU-012 or SFRU-015 → step = 0.25.
+
+Reason: Align with SÜFRÜ UI spec without changing visual theme or introducing new components.

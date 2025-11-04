@@ -1,0 +1,6 @@
+Updated: lib/shop/sufru/shop_list_page_sufru.dart
+- Filter chips now display `category_name` (human-readable names) instead of category IDs.
+- Added a simple search box filtering by product `name`.
+- Preserved existing grid layout and navigation to product detail.
+
+Reason: Align filter UI with SÜFRÜ spec (show category names) and add quick search for product names.

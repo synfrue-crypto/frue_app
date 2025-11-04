@@ -1,0 +1,1 @@
+﻿PHASE2 changes - 11/04/2025 10:27:50 Files changed:  - lib/widgets/product_card.dart: moved badges under image next to title, reduced badge size, adjusted paddings  Artifacts:  - frue_sync/screenshots/grid_before.png  - frue_sync/screenshots/grid_after.png  - frue_sync/screenshots/detail_after.png

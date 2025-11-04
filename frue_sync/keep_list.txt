@@ -1,0 +1,6 @@
+lib/shop/sufru/**
+lib/widgets/**
+lib/brand/**
+assets/data/frue/**
+docs/**
+frue_sync/**

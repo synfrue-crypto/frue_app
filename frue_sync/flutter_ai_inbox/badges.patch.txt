@@ -1,0 +1,5 @@
+Updated: lib/widgets/badges.dart
+- Normalized `brandQuality` matching: now accepts loose variants like 'Demeter, Bio' or 'bio/demeter' and maps to the canonical assets `assets/icons/demeter.png` / `assets/icons/bio.png`.
+- Kept web-safe Image.asset usage by stripping leading 'assets/' before calling `Image.asset`.
+
+Reason: Avoid encoded filenames and 404s when `brand_quality` is non-canonical.

@@ -1,0 +1,5 @@
+Changed: lib/shop/grufru/product_detail_page_grufru.dart
+- Removed unused import '../../widgets/asset_router.dart'
+Reason: file used SmartAssetImage from smart_image.dart and BrandTheme; AssetRouter import was unused and caused analyzer unused-import warnings.
+
+Validation: manual inspection; file now imports only smart_image and brand_theme; SmartAssetImage(imageCandidates(...)) still used.

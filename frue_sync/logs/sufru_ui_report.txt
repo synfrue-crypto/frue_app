@@ -1,0 +1,5 @@
+﻿SÃœFRÃœ Detail Screenshot Report - 11/04/2025 10:21:28
+OK: SFRU-001 -> C:\Users\Test\crash shopsplit\frue_app_projekt_shopsplit_defekt\frue_app\frue_sync\screens\detail_SFRU-001.png
+OK: SFRU-012 -> C:\Users\Test\crash shopsplit\frue_app_projekt_shopsplit_defekt\frue_app\frue_sync\screens\detail_SFRU-012.png
+OK: SFRU-023 -> C:\Users\Test\crash shopsplit\frue_app_projekt_shopsplit_defekt\frue_app\frue_sync\screens\detail_SFRU-023.png
+OK: Grid -> C:\Users\Test\crash shopsplit\frue_app_projekt_shopsplit_defekt\frue_app\frue_sync\screens\grid_sufru.png

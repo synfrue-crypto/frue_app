@@ -1,0 +1,1 @@
+Adds detail sections (Beschreibung, Herkunft, Saison, etc.) and shows price/unit.

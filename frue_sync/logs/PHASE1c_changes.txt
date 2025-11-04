@@ -1,0 +1,1 @@
+﻿PHASE1c typography & badge fine-tune - 11/04/2025 10:24:29 Files changed:  - lib/shop/sufru/product_detail_page_sufru.dart: increased heading/body sizes  - lib/widgets/product_card.dart: badge backdrop and reduced size, title font increased  Artifacts:  - frue_sync/screenshots/sufru_grid_finetuned.png  - frue_sync/screenshots/sufru_detail_textblock_finetuned.png

@@ -1,0 +1,49 @@
+Build report: SÜFRÜ UI fixes
+Date: 2025-11-04
+
+Summary:
+- Implemented the SÜFRÜ UI fixes per `20251104_Karl_UI_Fix_Spec.md` focusing on UI-only changes (assets, badges, filterchips, detail consolidation, quantity step/freemenge).
+
+Files changed (source):
+- lib/widgets/asset_router.dart (updated resolver to check multiple bases and prefer placeholder)
+- lib/widgets/smart_image.dart (integrates with AssetRouter and strips duplicate 'assets/' prefix when necessary)
+- lib/widgets/badges.dart (normalize brand_quality; accept loose variants and avoid double-assets on Web)
+- lib/widgets/product_card.dart (badge overlay via QualityBadges; layout tweaks to avoid RenderFlex overflow)
+- lib/shop/sufru/product_detail_page_sufru.dart (consolidated detail text block, Freimenge input, qty_step special-case logic)
+- lib/widgets/quantity_input.dart (robust fractional step display/behavior)
+
+Files exported to review inbox (full copies + patch notes):
+- frue_sync/flutter_ai_inbox/product_card.dart
+- frue_sync/flutter_ai_inbox/badges.dart
+- frue_sync/flutter_ai_inbox/product_detail_page_sufru.dart
+- frue_sync/flutter_ai_inbox/shop_list_page_sufru.dart
+- frue_sync/flutter_ai_inbox/smart_image.dart
+- frue_sync/flutter_ai_inbox/quantity_input.dart
+- frue_sync/flutter_ai_inbox/product_card.patch_v2.txt
+- frue_sync/flutter_ai_inbox/badges.patch.txt
+(Existing patch notes retained in the inbox for other earlier edits.)
+
+Analyzer status (run: `dart analyze`):
+- Errors: 0
+- Warnings/Infos: 10 (mostly minor warnings and analysis_options include notification). See analyzer output for details.
+
+Runtime verification (run: `flutter run -d chrome --verbose --no-pub`):
+- App launched in Chrome successfully.
+- No RenderFlex overflow assertions observed after layout tweaks.
+- No obvious asset 404s for product images or badge icons in the observed logs.
+
+Self-check & Acceptance:
+- Assets mapping: AssetRouter resolves product IDs to jpg/jpeg/png and falls back to placeholders; code prevents `assets/assets/...` duplication.
+- Badges: QualityBadges normalizes messy inputs and uses canonical icons under `assets/icons/`.
+- Filterchips/Search: `shop_list_page_sufru.dart` shows `category_name` chips and a working name search.
+- Detail page: `long_desc`, `Anwendung`, `Composition` displayed in one block; Freimenge field present; qty step special-cases handled.
+- No functional logic has been modified beyond UI-safe behaviors (quantity math limited to addition for Freimenge).
+
+Next steps (recommended):
+1) Visual review by Andi (manual checks across 1–4 column widths). Include screenshots where differences are subtle.
+2) If OK, consider removing the temporary review copies or adding them to a `frue_sync/patches/` folder excluded from analysis.
+3) Optional: add a tiny widget test to assert ProductCard renders without overflow at a constrained size.
+
+Log attachments: see `frue_sync/flutter_ai_inbox/20251104_karl_sufru_fix.log` for earlier run logs and the session patch notes.
+
+Status: READY FOR REVIEW
